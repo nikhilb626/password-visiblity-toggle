@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<style>
+    body{
+        background: #5887;
+        padding: 0;
+        margin: 0;
+
+    }
+
+    .wrapper{
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 50%;
+        left: 50%;
+        width: 300px;
+    }
+    input{
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 18px;
+        border: none;
+        padding: 10px 10px;
+        border-radius: 3px;
+        color: #4a4a4a;
+        letter-spacing: 0.5px;
+        box-shadow: 0 5px 30px rgba(22,89,233);    
+    }
+    ::placeholder{
+        color: #9a9a9a;
+        font-weight: 400;
+    }
+
+    span{
+        position: absolute;
+        right: 15px;
+        transform: translate(0,-50%);
+        top: 50%;
+        cursor: pointer;
+
+    }
+    .fa{
+        font-size: 20px;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <input type="password" placeholder='password' id="password">
+        <span>
+            <i class="fa fa-eye" aria-hidden="true"id="eye" onclick="toggle()"></i>
+        </span>
+    </div>
+
+
+<script>
+    var state=false;
+    function toggle(){
+        if(state){
+            document.getElementById('password').setAttribute("type","password");
+            document.getElementById('eye').style.color='#7a797e';
+            state=false;
+        }
+        else{
+            document.getElementById("password").setAttribute('type','text');
+            document.getElementById('eye').style.color='#5887ef';
+            state=true;
+        }
+    }
+</script>
+</body>
+</html>
